@@ -1,0 +1,50 @@
+version: "2"
+services:
+  e2e:
+    image: adrianoxfx/protractor_node:1.0
+    working_dir: /home/node/app/e2e
+    volumes:
+      - ./:/home/node/app
+    command: >-
+      bash -c "npm run test"
+
+  webapp:
+    build:
+      context: ./webapp
+    working_dir: /angular2-rxjs-chat
+    ports:
+      - 4200:4200
+    command: >-
+      bash -c "sed -i -e 's/ng serve/ng serve --host 0.0.0.0 --disable-host-check/g' package.json;\
+        npm start"
+
+  zalenium:
+    image: "dosel/zalenium"
+    container_name: zalenium
+    hostname: zalenium
+    tty: true
+    volumes:
+      - /tmp/videos:/home/seluser/videos
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 4444:4444
+    command: >
+      start --desiredContainers 2
+            --maxDockerSeleniumContainers 8
+            --screenWidth 800 --screenHeight 600
+            --timeZone "Europe/Berlin"
+            --videoRecordingEnabled true
+
+  featurebook:
+    build:
+      context: ./featurebook
+    container_name: featurebook
+    working_dir: /features
+    volumes:
+      - ./:/features
+    ports:
+      - 2000:2000
+
+
+volumes:
+  webapp:

@@ -1,0 +1,10 @@
+node_modules
+results.json
+cucumber_report.html
+.DS_Store
+.log
+**/dist
+# Files of plugin Floobits
+.floo
+.flooignore
+null
