@@ -1,6 +1,5 @@
 'use strict'
 
-
 class Home {
   constructor () {
     this.conversationWrap = $('.conversation-wrap')
@@ -14,6 +13,11 @@ class Home {
 
   visit () {
     return browser.get('/')
+  }
+
+  performClick (element) {
+    browser.sleep(1000)
+    return browser.actions().mouseMove(element).click().perform()
   }
 }
 

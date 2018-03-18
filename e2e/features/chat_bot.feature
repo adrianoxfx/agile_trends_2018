@@ -1,4 +1,5 @@
 #language: pt
+# featurebookDisplayName: Chat bot
 
 Funcionalidade: Chat bot
 

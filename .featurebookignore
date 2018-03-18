@@ -10,7 +10,9 @@
 *.json
 *.html
 *.pdf
-*.jpg
+*.jpeg
+*.txt
+webapp
 page_objects
 images_upload
 rest_service
@@ -21,3 +23,7 @@ screenshots_base_macos
 step_definitions
 shared_libs
 node_modules
+report
+featurebook
+Dockerfile
+images

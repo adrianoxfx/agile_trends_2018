@@ -20,20 +20,16 @@ module.exports = function () {
   this.When(/^eu seleciono "([^"]*)" na lista$/, {timeout: 60 * 1000}, function (bot, callback) {
     switch (bot) {
     case 'Echo Bot':
-      browser.actions().mouseMove(home.echoBot).click().perform()
-      // home.echoBot.click()
+      home.performClick(home.echoBot)
       .then(callback)
     case 'Reverse Bot':
-      browser.actions().mouseMove(home.reverseBot).click().perform()
-      // home.reverseBot.click()
+      home.performClick(home.reverseBot)
       .then(callback)
     case 'Waiting Bot':
-      browser.actions().mouseMove(home.waitingBot).click().perform()
-      // home.waitingBot.click()
+      home.performClick(home.waitingBot)
       .then(callback)
     case 'Lady Capulet':
-      browser.actions().mouseMove(home.ladyBot).click().perform()
-      // home.ladyBot.click()
+      home.performClick(home.ladyBot)
       .then(callback)
     }
   })
