@@ -8,7 +8,6 @@ exports.config = {
   restartBrowserBetweenTests: false,
   getPageTimeout: 20000,
   allScriptsTimeout: 30000,
-  rootElement: '*[ng-app]',
   baseUrl: "http://webapp:4200",
   useAllAngular2AppRoots: true,
 
@@ -32,8 +31,8 @@ exports.config = {
 
   beforeLaunch: function () {
       setTimeout(function () {
-        browser.driver.manage().window().setSize(1280, 1024)
-        // browser.driver.manage().window().maximize()
+        // browser.driver.manage().window().setSize(1280, 1024)
+        browser.driver.manage().window().maximize()
       })
   },
 

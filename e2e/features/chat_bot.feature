@@ -9,7 +9,7 @@ Contexto:
 Cenário: Visualizar lista de bots
   Então vejo a lista de bots
 
-@Test
+@test
 Esquema do Cenário: Abrir conversa com bot
   Quando eu seleciono "<bot>" na lista
   Então Eu vejo a janela de conversa
