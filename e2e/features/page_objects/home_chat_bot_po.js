@@ -16,7 +16,7 @@ class Home {
   }
 
   performClick (element) {
-    browser.sleep(1000)
+    browser.sleep(2000)
     return browser.actions().mouseMove(element).click().perform()
   }
 }
